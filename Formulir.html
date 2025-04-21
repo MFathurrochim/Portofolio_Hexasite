@@ -172,6 +172,22 @@
       <input type="file">
 
       <button type="submit">Kirim Sekarang</button>
+      <script>
+        document.getElementById("formPesanan").addEventListener("submit", function (e) {
+          e.preventDefault(); // mencegah submit form biasa
+      
+          let nama = document.getElementById("nama").value;
+          let layanan = document.getElementById("layanan").value;
+          let pesan = document.getElementById("pesan").value;
+      
+          let nomorWa = "6281234567890"; // ganti dengan nomor WA kamu, pakai format internasional
+      
+          let text = `Halo, saya ${nama} ingin memesan jasa berikut:%0A- Layanan: ${layanan}%0A- Pesan: ${pesan}`;
+          let url = `https://wa.me/0851560998${nomorWa}?text=${text}`;
+      
+          window.open(url, "_blank"); // buka di tab baru
+        });
+      </script>
     </form>
   </div>
 </body>

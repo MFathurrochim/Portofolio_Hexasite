@@ -5,27 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Form Pemesanan Website</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Segoe UI', sans-serif;
+      background: #faf7ff;
       margin: 0;
       padding: 0;
-      background: #f4f4f8;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      
-      background-color: #faf7ff;
       background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c1b9ff' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      
-      
-      
     }
-
     .form-container {
       background: #fff;
       padding: 30px;
@@ -35,160 +25,118 @@
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
     }
-
-    h1 {
-      font-size: 24px;
+    h1, p {
       text-align: center;
-      margin-bottom: 10px;
-      color: #222;
     }
-
-    p {
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 25px;
-    }
-
     label {
-      display: block;
       margin-top: 15px;
-      margin-bottom: 6px;
-      font-weight: 600;
-      font-size: 14px;
+      display: block;
+      font-weight: bold;
     }
-
     input, select, textarea {
       width: 100%;
       padding: 12px;
+      margin-top: 5px;
       border-radius: 12px;
       border: 1px solid #ccc;
       font-size: 14px;
-      transition: border 0.3s;
     }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: #6a5acd;
-      outline: none;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
     button {
-      margin-top: 20px;
       width: 100%;
       padding: 14px;
-      font-size: 15px;
+      margin-top: 20px;
       border: none;
       border-radius: 12px;
       background-color: #6a5acd;
       color: white;
+      font-size: 15px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
-
-    /*button:hover {
-      background-color: #5a4ac9;
-    }*/
-    
     button:hover {
-  background-color: #5a4ac9;
-  transform: scale(1.03);
-  transition: all 0.2s ease-in-out;
-}
-  
-  
-  .web {
-    color: #5a4ac9;
-  }
-
-    @media (min-width: 768px) {
-      
-    .form-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    background-color: white;
-  }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      p {
-        font-size: 15px;
-      }
-
-      input, select, textarea {
-        font-size: 15px;
-      }
-
-      button {
-        font-size: 16px;
-      }
+      background-color: #5a4ac9;
+      transform: scale(1.03);
+      transition: all 0.2s ease-in-out;
+    }
+    #jenisLainnya {
+      display: none;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="form-container">
-    <h1>Bangun <span class="web">Website Impianmu</span><br>Bersama Kami!</h1>
-    <p>Isi formulir di bawah untuk memulai proyek kamu sekarang juga.</p>
-
-    <form>
+    <h1>Bangun <span style="color:#5a4ac9">Website Impianmu</span></h1>
+    <p>Isi formulir di bawah dan kami akan hubungi kamu via WhatsApp</p>
+    <form id="formPesan">
       <label>Nama Lengkap</label>
-      <input type="text" placeholder="Masukkan nama lengkap" required>
+      <input type="text" id="nama" placeholder="Contoh: Agus" required>
 
-      <label>Email / WhatsApp</label>
-      <input type="text" placeholder="Masukkan email atau WhatsApp" required>
+      <label>Nomor WhatsApp (gunakan awalan 62)</label>
+      <input type="text" id="kontak" placeholder="Contoh: 6281234567890" required>
 
       <label>Jenis Website</label>
-      <select required>
+      <select id="jenis" required>
         <option value="">Pilih jenis website</option>
-        <option>Toko Online</option>
-        <option>Portofolio</option>
-        <option>Company Profile</option>
-        <option>Lainnya</option>
+        <option value="Toko Online">Toko Online</option>
+        <option value="Portofolio">Portofolio</option>
+        <option value="Company Profile">Company Profile</option>
+        <option value="Landing Page">Landing Page</option>
+        <option value="Blog Pribadi">Blog Pribadi</option>
+        <option value="Lainnya">Lainnya</option>
       </select>
+
+      <input type="text" id="jenisLainnya" placeholder="Isi jenis website lain..." />
 
       <label>Deskripsi Singkat Website</label>
-      <textarea placeholder="Contoh: Saya ingin website katalog produk fashion..."></textarea>
+      <textarea id="deskripsi" placeholder="Contoh: Saya ingin website untuk katalog produk fashion." required></textarea>
 
-      <label>Budget Kamu</label>
-      <select required>
-        <option value="">< 1 juta</option>
-        <option>1 - 3 .juta</option>
-        <option>> 3 juta</option>
-      </select>
+      <label>Budget Kamu (boleh perkiraan)</label>
+      <input type="text" id="budget" placeholder="Contoh: 2 juta" required>
 
       <label>Deadline / Target Selesai</label>
-      <input type="text" placeholder="Contoh: 1 Mei 2025">
-
-      <label>Upload Referensi (Opsional)</label>
-      <input type="file">
+      <input type="text" id="deadline" placeholder="Contoh: 1 Mei 2025" required>
 
       <button type="submit">Kirim Sekarang</button>
-      <script>
-        document.getElementById("formPesanan").addEventListener("submit", function (e) {
-          e.preventDefault(); // mencegah submit form biasa
-      
-          let nama = document.getElementById("nama").value;
-          let layanan = document.getElementById("layanan").value;
-          let pesan = document.getElementById("pesan").value;
-      
-          let nomorWa = "6281234567890"; // ganti dengan nomor WA kamu, pakai format internasional
-      
-          let text = `Halo, saya ${nama} ingin memesan jasa berikut:%0A- Layanan: ${layanan}%0A- Pesan: ${pesan}`;
-          let url = `https://wa.me/0851560998${nomorWa}?text=${text}`;
-      
-          window.open(url, "_blank"); // buka di tab baru
-        });
-      </script>
     </form>
   </div>
+
+  <script>
+    const jenisSelect = document.getElementById("jenis");
+    const inputJenisLain = document.getElementById("jenisLainnya");
+
+    jenisSelect.addEventListener("change", function () {
+      inputJenisLain.style.display = this.value === "Lainnya" ? "block" : "none";
+    });
+
+    document.getElementById("formPesan").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value.trim();
+      const kontak = document.getElementById("kontak").value.trim();
+      const jenis = jenisSelect.value === "Lainnya" ? inputJenisLain.value.trim() : jenisSelect.value;
+      const deskripsi = document.getElementById("deskripsi").value.trim();
+      const budget = document.getElementById("budget").value.trim();
+      const deadline = document.getElementById("deadline").value.trim();
+
+      const nomorWA = "6289528611752"; 
+      const pesan = `Halo, saya ingin membuat website.
+
+    Nama : ${nama}
+    Nomor WA : ${kontak}
+    Jenis Website : ${jenis}
+    Deskripsi : ${deskripsi}
+    Budget : ${budget}
+    Deadline : ${deadline}
+
+    Mohon informasinya lebih lanjut, terima kasih!`;
+
+      const encodedPesan = encodeURIComponent(pesan);
+      const urlWA = `https://wa.me/${nomorWA}?text=${encodedPesan}`;
+      window.open(urlWA);
+
+      this.reset();
+      inputJenisLain.style.display = "none";
+    });
+  </script>
 </body>
 </html>

@@ -88,34 +88,33 @@
 
     
         async function login() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-            
-            if (!email || !password) {
-                alert("Email dan Password harus diisi!");
-                return;
-            }
+    if (!email || !password) {
+        alert("Email dan Password harus diisi!");
+        return;
+    }
 
-            try {
-                const { user, session, error } = await supabase.auth.signInWithPassword({
-                    email: email,
-                    password: password
-                });
+    try {
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
 
-                if (error) {
-                    console.error('Error signing in:', error.message);
-                    alert('Gagal login! Periksa email dan password.');
-                } else {
-                    console.log('Login berhasil:', user);
-                    alert('Login berhasil!');
-                    window.location.href = 'index.php'; // halaman setelah login ntar lu ganti aja
-                }
-            } catch (error) {
-                console.error('Unexpected error:', error);
-                alert('Terjadi kesalahan. Coba lagi.');
-            }
+        if (error) {
+            console.error('Error signing in:', error.message);
+            alert('Gagal login: ' + error.message);
+        } else {
+            console.log('Login berhasil:', data.user);
+            alert('Login berhasil!');
+            window.location.href = "index.html";
         }
+    } catch (err) {
+        console.error('Unexpected error:', err);
+        alert('Terjadi kesalahan. Coba lagi.');
+    }
+}
     </script>
 </body>
 </html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HexaSite - Digital Solutions</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HexaSite - Digital Solutions</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
+        <style>
     /* Reset dan style dasar */
     * {
       margin: 0;
@@ -18,133 +19,135 @@
     }
 
     :root {
-      --pr-color: rgba(93, 23, 235, 255);
-    }
+    --pr-color: #5D17EB;
+}
 
-    body {
-      font-family: "roboto", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    .services {
-      text-align: center;
-      padding: 40px;
-      background-color: var(--pr-color);
-    }
+.services {
+    text-align: center;
+    padding: 40px;
+    background-color: #F8F9FB;
+}
 
-    .service-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      /* Biar responsif di layar kecil */
-      margin-top: 20px;
-      align-items: center;
-    }
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Biar responsif di layar kecil */
+    margin-top: 20px;
+    align-items: center;
+}
 
-    .service-card {
-      background-color: white;
-      border-radius: 10px;
-      height: 200px;
-      width: 200px;
-      transition: transform 0, 5s;
-      text-align: center;
-      box-shadow: 0px 4px 12px;
-    }
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+    transition: transform 0, 5s;
+    text-align: center;
+    box-shadow:rgb(236, 236, 236) 0px 4px 20px;
+}
 
-    .service-card:hover {
-      background: linear-gradient(160deg, var(--pr-color), rgb(58, 58, 58));
-      color: white;
-      transition: all .2s ease-in;
+.service-card:hover {
+    background: linear-gradient(160deg, var(--pr-color), rgb(56, 54, 54));
+    color: white;
+    transition: all .2s ease-in;
+    box-shadow:rgb(112, 112, 112) 0px 4px 20px;
 
-    }
+}
 
-    .service-card h3 {
-      margin: 1px;
-    }
+.service-card h4 {
+    margin: 1px;
+}
 
-    .service-card p {
-      margin: 10px;
-    }
+.service-card p {
+    margin: 10px;
+}
 
 
-    .development-icon {
-      margin: 20px 0 0 0;
-      padding: 10px;
-      width: 30px;
-      /* background-color: rgba(93,23,234,255); */
-      /* border-radius: 20px ; */
+.development-icon {
+    margin: 20px 0 0 0;
+    padding: 10px;
+    width: 50px;
+    /* background-color: rgba(93,23,234,255); */
+    /* border-radius: 20px ; */
 
-    }
+}
 
-    /* -------------------------------------- */
-    .featured {
-      background-color: #CFCBF2;
-      text-align: center;
-      padding: 40px;
-      margin-top: 2px;
+/* -------------------------------------- */
+.featured {
+    background-color: #F8F9FB;
+    text-align: center;
+    padding: 40px;
 
-    }
+}
 
-    .featured-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-    }
+.featured-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-    .featured h2 {
-      margin-bottom: 30px;
-      font-family: arial;
-    }
+.project-card {
+    background-color: #fff;
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    max-width: 350px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
 
-    .project-card {
-      background-color: #fff;
-      height: 300px;
-      width: 250px;
-      border-radius: 10px;
-      max-width: 350px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+.project-card:hover {
+    transform: translateY(-5); 
+    box-shadow: 0 0px 4px 5px rgba(0, 0, 0, 0.1) ;
+}
 
-    .project-header {
-      background-color: #f5f7ff;
-      padding: 20px;
-      text-align: center;
-    }
+.project-header {
+    background-color: #f5f7ff;
+    padding: 20px;
+    text-align: center;
+}
 
-    .project-title {
-      color: var(--pr-color);
-      font-size: 22px;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
+.project-title {
+    color: var(--pr-color);
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
 
-    .project-description {
-      color: #777;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+.project-description {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
 
-    .project-footer {
-      padding: 20px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+.project-footer {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
-    .tag {
-      background-color: #f5f0ff;
-      color: var(--pr-color);
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 14px;
-    }
+.tag {
+    background-color: #f5f0ff;
+    color: var(--pr-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
 
 
     body {
@@ -425,55 +428,6 @@
       margin: 1%;
     }
 
-    .services {
-      text-align: center;
-      padding: 40px;
-      background-color: rgba(93, 23, 235, 255);
-    }
-
-    .service-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      /* Biar responsif di layar kecil */
-      margin-top: 20px;
-      align-items: center;
-    }
-
-    .service-card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      height: 200px;
-      width: 200px;
-      transition: transform 0, 5s;
-      text-align: center;
-      box-shadow: 0px 4px 12px;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      color: black;
-    }
-
-    .service-card h3 {
-      margin: 1px;
-    }
-
-    .service-card p {
-      margin: 10px;
-    }
-
-
-    .development-icon {
-      margin: 20px 0 0 0;
-      padding: 10px;
-      width: 30px;
-      /* background-color: rgba(93,23,234,255); */
-      /* border-radius: 20px ; */
-
-    }
 
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -865,187 +819,202 @@
       }
     }
   </style>
-</head>
+    </head>
 
-<body>
-  <div class="container">
-    <!-- Navbar -->
-    <nav>
-      <div class="logo">
-        <h1 class="logo-text">HexaSite</h1>
-        <span class="logo-subtext">DIGITAL SOLUTIONS</span>
-      </div>
+    <body>
+        <div class="container">
+            <!-- Navbar -->
+            <nav>
+                <div class="logo">
+                    <h1 class="logo-text">HexaSite</h1>
+                    <span class="logo-subtext">DIGITAL SOLUTIONS</span>
+                </div>
 
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
 
-      <div class="overlay"></div>
+                <div class="overlay"></div>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Projects</a>
-        <a href="About.html">About</a>
-        <a href="login.html" class="contact-btn">Login</a>
-      </div>
-    </nav>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Projects</a>
+                    <a href="About.html">About</a>
+                    <a href="login.html" class="contact-btn">Login</a>
+                </div>
+            </nav>
 
-    <section class="hero">
-      <div class="hero-content">
-        <h2 class="hero-title">Transforming Ideas Into Digital <span>Experiences</span></h2>
-        <p class="hero-description">HexaSite creates cutting-edge websites and digital solutions that help
-          businesses thrive in the modern digital landscape.</p>
-        <div class="btn-container">
-          <a href="#" class="primary-btn">Our Work</a>
-          <a href="formulir.html" class="secondary-btn">Get in Touch</a>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2 class="hero-title">Transforming Ideas Into Digital
+                        <span>Experiences</span></h2>
+                    <p class="hero-description">HexaSite creates cutting-edge
+                        websites and digital solutions that help
+                        businesses thrive in the modern digital landscape.</p>
+                    <div class="btn-container">
+                        <a href="#" class="primary-btn">Our Work</a>
+                        <a href="formulir.html" class="secondary-btn">Get in
+                            Touch</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="browser-mockup">
+                        <div class="browser-dots">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="browser-content">
+                            <div class="content-line"></div>
+                            <div class="content-line short"></div>
+                            <div class="content-line"></div>
+                            <div class="content-button"></div>
+                            <div class="content-block"></div>
+                            <div class="content-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-      </div>
+        <!-- our service  -->
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-container">
+                <div class="service-card">
+                    <img src="assets/web-development-svgrepo-com.svg" alt
+                        class="development-icon">
+                    <h4>Web Development</h4>
+                    <p>Custom websites and web applications built for you.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/user-speak-svgrepo-com.svg" alt
+                        class="development-icon">
+                    <h4>UI/UX Design</h4>
+                    <p>User-centered design that enhances business
+                        performance.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/megaphone-speaker-svgrepo-com.svg" alt
+                        class="development-icon">
+                    <h4>Digital Marketing</h4>
+                    <p>Strategic marketing solutions to increase your online
+                        presence.</p>
+                </div>
+            </div>
+        </section>
 
-      <div class="hero-image">
-        <div class="browser-mockup">
-          <div class="browser-dots">
-            <div class="dot dot-red"></div>
-            <div class="dot dot-yellow"></div>
-            <div class="dot dot-green"></div>
-          </div>
-          <div class="browser-content">
-            <div class="content-line"></div>
-            <div class="content-line short"></div>
-            <div class="content-line"></div>
-            <div class="content-button"></div>
-            <div class="content-block"></div>
-            <div class="content-block"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <!-- our service  -->
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-container">
-      <div class="service-card">
-        <img src="assets/web-development-svgrepo-com.svg" alt class="development-icon">
-        <h3>Web Development</h3>
-        <p>Custom websites and web applications built for you.</p>
-      </div>
-      <div class="service-card">
-        <img src="assets/user-speak-svgrepo-com.svg" alt class="development-icon">
-        <h3>UI/UX Design</h3>
-        <p>User-centered design that enhances business
-          performance.</p>
-      </div>
-      <div class="service-card">
-        <img src="assets/megaphone-speaker-svgrepo-com.svg" alt class="development-icon">
-        <h3>Digital Marketing</h3>
-        <p>Strategic marketing solutions to increase your online
-          presence.</p>
-      </div>
-    </div>
-  </section>
+        <!-- Featured Project -->
+        <section class="featured">
+            <h2>Featured Projects</h2>
+            <div class="featured-container">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h2 class="project-title">BrightMart</h2>
+                        <p class="project-description">E-commerce platform with
+                            inventory manager</p>
+                    </div>
+                    <div class="project-footer">
+                        <span class="tag">E-commerce</span>
+                        <span class="tag">React</span>
+                    </div>
+                </div>
 
-  <!-- Featured Project -->
-  <section class="featured">
-    <h2>Featured Projects</h2>
-    <div class="featured-container">
-      <div class="project-card">
-        <div class="project-header">
-          <h2 class="project-title">BrightMart</h2>
-          <p class="project-description">E-commerce platform with inventory manager</p>
-        </div>
-        <div class="project-footer">
-          <span class="tag">E-commerce</span>
-          <span class="tag">React</span>
-        </div>
-      </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h2 class="project-title">EduSmart</h2>
+                        <p class="project-description">Educational platform
+                            connecting administrators</p>
+                    </div>
+                    <div class="project-footer">
+                        <span class="tag">Education</span>
+                        <span class="tag">Laravel</span>
+                    </div>
+                </div>
 
-      <div class="project-card">
-        <div class="project-header">
-          <h2 class="project-title">EduSmart</h2>
-          <p class="project-description">Educational platform connecting administrators</p>
-        </div>
-        <div class="project-footer">
-          <span class="tag">Education</span>
-          <span class="tag">Laravel</span>
-        </div>
-      </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h2 class="project-title">HealthConnect</h2>
+                        <p class="project-description">Telemedicine app with
+                            appointment scheduling</p>
+                    </div>
+                    <div class="project-footer">
+                        <span class="tag">Healthcare</span>
+                        <span class="tag">Flutter</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="project-card">
-        <div class="project-header">
-          <h2 class="project-title">HealthConnect</h2>
-          <p class="project-description">Telemedicine app with appointment scheduling</p>
-        </div>
-        <div class="project-footer">
-          <span class="tag">Healthcare</span>
-          <span class="tag">Flutter</span>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Footer HTML -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h3>HexaSite</h3>
+                        <p>DIGITAL SOLUTIONS</p>
+                    </div>
+                    <p class="footer-tagline">Transforming ideas into
+                        exceptional digital experiences</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
 
-  <!-- Footer HTML -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <div class="footer-logo">
-          <h3>HexaSite</h3>
-          <p>DIGITAL SOLUTIONS</p>
-        </div>
-        <p class="footer-tagline">Transforming ideas into exceptional digital experiences</p>
-        <div class="social-icons">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
 
-      <div class="footer-column">
-        <h4>Company</h4>
-        <ul class="footer-links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Team</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                    </ul>
+                </div>
 
-      <div class="footer-column">
-        <h4>Services</h4>
-        <ul class="footer-links">
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">UI/UX Design</a></li>
-          <li><a href="#">Digital Marketing</a></li>
-          <li><a href="#">Mobile Apps</a></li>
-        </ul>
-      </div>
+                <div class="footer-column">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for the latest updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
 
-      <div class="footer-column">
-        <h4>Stay Updated</h4>
-        <p>Subscribe to our newsletter for the latest updates</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address">
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-    </div>
+            <div class="footer-bottom">
+                <div class="footer-container">
+                    <p>&copy; 2025 HexaSite Digital Solutions. All rights
+                        reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-    <div class="footer-bottom">
-      <div class="footer-container">
-        <p>&copy; 2025 HexaSite Digital Solutions. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript for burger menu -->
-  <script>
+        <!-- JavaScript for burger menu -->
+        <script>
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const overlay = document.querySelector('.overlay');
@@ -1077,5 +1046,5 @@
       });
     });
   </script>
-</body>
+    </body>
 </html>

@@ -1,100 +1,991 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HexaSite - Digital Solutions</title>
   <link rel="stylesheet" href="About.css">
-  <link rel="stylesheet" href="Script.js">
-  <!-- Link CDN Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Reset dan style dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --pr-color: rgba(93, 23, 235, 255);
+    }
+
+    body {
+      font-family: "roboto", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .services {
+      text-align: center;
+      padding: 40px;
+      background-color: var(--pr-color);
+    }
+
+    .service-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      /* Biar responsif di layar kecil */
+      margin-top: 20px;
+      align-items: center;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 10px;
+      height: 200px;
+      width: 200px;
+      transition: transform 0, 5s;
+      text-align: center;
+      box-shadow: 0px 4px 12px;
+    }
+
+    .service-card:hover {
+      background: linear-gradient(160deg, var(--pr-color), rgb(58, 58, 58));
+      color: white;
+      transition: all .2s ease-in;
+
+    }
+
+    .service-card h3 {
+      margin: 1px;
+    }
+
+    .service-card p {
+      margin: 10px;
+    }
+
+
+    .development-icon {
+      margin: 20px 0 0 0;
+      padding: 10px;
+      width: 30px;
+      /* background-color: rgba(93,23,234,255); */
+      /* border-radius: 20px ; */
+
+    }
+
+    /* -------------------------------------- */
+    .featured {
+      background-color: #CFCBF2;
+      text-align: center;
+      padding: 40px;
+      margin-top: 2px;
+
+    }
+
+    .featured-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .featured h2 {
+      margin-bottom: 30px;
+      font-family: arial;
+    }
+
+    .project-card {
+      background-color: #fff;
+      height: 300px;
+      width: 250px;
+      border-radius: 10px;
+      max-width: 350px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-header {
+      background-color: #f5f7ff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project-title {
+      color: var(--pr-color);
+      font-size: 22px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .project-description {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .project-footer {
+      padding: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background-color: #f5f0ff;
+      color: var(--pr-color);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+
+    body {
+      background-image: url("asset/");
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .logo-subtext {
+      font-size: 12px;
+      color: #666;
+      margin-left: 5px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #6b34eb;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #6b34eb;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .contact-btn {
+      background-color: #6b34eb;
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid #6b34eb;
+    }
+
+    .contact-btn:hover {
+      background-color: #5925d5;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(107, 52, 235, 0.3);
+    }
+
+    .contact-btn::after {
+      display: none;
+    }
+
+    /* Hamburger menu */
+    .burger {
+      display: none;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background-color: #f0f3ff;
+      border-radius: 0 0 50% 50% / 100%;
+      z-index: -1;
+    }
+
+    .hero-content {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero-title span {
+      display: block;
+      color: #6b34eb;
+      animation: colorPulse 3s infinite alternate;
+    }
+
+    .hero-description {
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      animation: fadeInUp 1s ease 0.2s both;
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 15px;
+      animation: fadeInUp 1s ease 0.4s both;
+    }
+
+    .primary-btn {
+      background-color: #6b34eb;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .primary-btn:hover {
+      background-color: #5925d5;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(107, 52, 235, 0.3);
+    }
+
+    .secondary-btn {
+      background-color: transparent;
+      color: #333;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: 2px solid #ddd;
+    }
+
+    .secondary-btn:hover {
+      border-color: #6b34eb;
+      color: #6b34eb;
+      transform: translateY(-2px);
+    }
+
+    .browser-mockup {
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      width: 450px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot-red {
+      background-color: #ff5f57;
+    }
+
+    .dot-yellow {
+      background-color: #febc2e;
+    }
+
+    .dot-green {
+      background-color: #28c840;
+    }
+
+    .browser-content {
+      background-color: #f5f7ff;
+      border-radius: 4px;
+      padding: 10px;
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .content-line {
+      height: 15px;
+      background-color: #e4e9f7;
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    .content-line.short {
+      width: 70%;
+    }
+
+    .content-button {
+      background-color: #6b34eb;
+      height: 30px;
+      width: 100px;
+      border-radius: 4px;
+      margin-top: 15px;
+    }
+
+    .content-block {
+      height: 40px;
+      background-color: #e4e9f7;
+      border-radius: 4px;
+      width: 48%;
+      display: inline-block;
+      margin: 1%;
+    }
+
+    .services {
+      text-align: center;
+      padding: 40px;
+      background-color: rgba(93, 23, 235, 255);
+    }
+
+    .service-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      /* Biar responsif di layar kecil */
+      margin-top: 20px;
+      align-items: center;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      height: 200px;
+      width: 200px;
+      transition: transform 0, 5s;
+      text-align: center;
+      box-shadow: 0px 4px 12px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      color: black;
+    }
+
+    .service-card h3 {
+      margin: 1px;
+    }
+
+    .service-card p {
+      margin: 10px;
+    }
+
+
+    .development-icon {
+      margin: 20px 0 0 0;
+      padding: 10px;
+      width: 30px;
+      /* background-color: rgba(93,23,234,255); */
+      /* border-radius: 20px ; */
+
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    .footer {
+      background: linear-gradient(to right, #5a17d6, #8145e5);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.5), #fff);
+      animation: shimmer 3s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 30px;
+      padding: 0 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s forwards;
+    }
+
+    .footer-column:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .footer-column:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .footer-column:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .footer-column:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer-logo h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .footer-logo p {
+      font-size: 12px;
+      margin: 0;
+      letter-spacing: 2px;
+      opacity: 0.8;
+    }
+
+    .footer-tagline {
+      margin: 15px 0;
+      font-size: 14px;
+      max-width: 260px;
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      margin-right: 10px;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background: #fff;
+      color: #5a17d6;
+      transform: translateY(-3px);
+    }
+
+    .footer h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer h4::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30px;
+      height: 3px;
+      background: #fff;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .footer-column:hover h4::after {
+      width: 60px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .footer-links a::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      padding-left: 5px;
+    }
+
+    .footer-links a:hover::before {
+      width: 100%;
+    }
+
+    .newsletter-form {
+      display: flex;
+      margin-top: 15px;
+      overflow: hidden;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    .newsletter-form button {
+      background: #fff;
+      color: #5a17d6;
+      border: none;
+      padding: 0 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      background: #f0f0f0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom .footer-container {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 13px;
+      margin-left: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #fff;
+    }
+
+    /* Mobile nav styles */
+    @media (max-width: 900px) {
+      .burger {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 270px;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px 30px;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        margin: 15px 0;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+
+      /* Burger animation */
+      .burger.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .burger.active div:nth-child(2) {
+        opacity: 0;
+      }
+
+      .burger.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+
+    /* Animasi */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes colorPulse {
+      0% {
+        color: blue;
+      }
+
+      50% {
+        color: blue;
+      }
+
+      100% {
+        color: #6b34eb;
+      }
+    }
+
+    /* Media queries for responsiveness */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+      }
+
+      .btn-container {
+        justify-content: center;
+      }
+
+      .browser-mockup {
+        width: 100%;
+        max-width: 450px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-column {
+        flex-basis: 50%;
+      }
+
+      .footer-bottom .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-bottom-links {
+        margin-top: 10px;
+      }
+
+      .footer-bottom-links a {
+        margin: 0 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer-column {
+        flex-basis: 100%;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  
+  <div class="container">
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">
+        <h1 class="logo-text">HexaSite</h1>
+        <span class="logo-subtext">DIGITAL SOLUTIONS</span>
+      </div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Projects</a>
+        <a href="About.html">About</a>
+        <a href="#" class="contact-btn">Login</a>
+      </div>
+    </nav>
+
+    <!-- about -->
   <center>
     <div class="h11">
       <h1>Tentang HexaSite</h1>
     </div>
   </center>
-  
-  
-  
+
+
+
   <div class="container">
     <div class="Pertanyaan">
-      
+
       <div class="Kepala">
         <h2>Siapa Kita?</h2>
-       <i class="fa-solid fa-chevron-down panah"></i>
+        <i class="fa-solid fa-chevron-down panah"></i>
       </div>
       <div class="isi">
-        <p><strong>HexaSite</strong> adalah tim kreatif muda yang bergerak di bidang pengembangan website. Kami bukan sekadar pembuat situs, tapi juga pemecah masalah digital. Dengan semangat kolaborasi, kami hadir untuk membantu bisnis, organisasi, dan individu membangun kehadiran online yang kuat dan efektif.</p>
+        <p><strong>HexaSite</strong> adalah tim kreatif muda yang bergerak di bidang pengembangan website. Kami bukan
+          sekadar pembuat situs, tapi juga pemecah masalah digital. Dengan semangat kolaborasi, kami hadir untuk
+          membantu bisnis, organisasi, dan individu membangun kehadiran online yang kuat dan efektif.</p>
       </div>
-      </div>
-      
-      <div class="Pertanyaan">
+    </div>
+
+    <div class="Pertanyaan">
       <div class="Kepala">
         <h2>Apa yang kita lakukan?</h2>
         <i class="fa-solid fa-chevron-down panah"></i>
       </div>
       <div class="isi">
-        <p>Kami merancang dan membangun website dari nol—mulai dari konsep desain, struktur halaman, hingga fitur interaktif yang dibutuhkan pengguna. Kami juga menangani revisi, maintenance, dan upgrade untuk menjamin performa website tetap optimal.</p>
+        <p>Kami merancang dan membangun website dari nol—mulai dari konsep desain, struktur halaman, hingga fitur
+          interaktif yang dibutuhkan pengguna. Kami juga menangani revisi, maintenance, dan upgrade untuk menjamin
+          performa website tetap optimal.</p>
       </div>
-      </div>
-      
-  </div>
-  
-  <div class="containerSkill">
-    
-    <div class="containerIndukCard">
-    <div class="centerDiv"><div class="h11"><h1 class="h1">Keunggulan Kami</h1>
-    </div>
     </div>
 
-  <div class="contCard">
-    
-    
-    
-    <div class="card">
-      <div class="logo">
-        <i class="fas fa-object-group"></i>
-      </div>
-      <div class="keterangan">
-        <h3>UI/UX</h3>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="logo">
-        <i class="fab fa-html5"></i>
-      </div>
-      <div class="keterangan">
-        <h3>HTML</h3>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="logo">
-        <i class="fab fa-css3-alt"></i>
-      </div>
-      <div class="keterangan">
-        <h3>CSS</h3>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="logo">
-        <i class="fab fa-js"></i>
-      </div>
-      <div class="keterangan">
-        <h3>JavaScript</h3>
-      </div>
-    </div>
-    
   </div>
+
+  <div class="containerSkill">
+
+    <div class="containerIndukCard">
+      <div class="centerDiv">
+        <div class="h11">
+          <h1 class="h1">Keunggulan Kami</h1>
+        </div>
+      </div>
+
+      <div class="contCard">
+
+
+
+        <div class="card">
+          <div class="logo">
+            <i class="fas fa-object-group"></i>
+          </div>
+          <div class="keterangan">
+            <h3>UI/UX</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="logo">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="keterangan">
+            <h3>HTML</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="logo">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <div class="keterangan">
+            <h3>CSS</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="logo">
+            <i class="fab fa-js"></i>
+          </div>
+          <div class="keterangan">
+            <h3>JavaScript</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
-    
-  </div>
-  
-  
-  
+
+
+
   <div class="contWhy">
     <center>
       <h1 class="h111">Kenapa Klien Harus Memilih Kita?</h1>
@@ -103,18 +994,55 @@
       <div class="Why1">
         <h2>Fokus pada Hasil, Bukan Janji</h2>
         <div class="garis"></div>
-        <p>Kami tidak hanya memberikan janji manis. Kami bekerja erat dengan klien untuk memahami kebutuhan mereka, memastikan setiap fitur dan desain memiliki dampak nyata. Setiap proyek adalah kolaborasi, bukan hanya eksekusi sepihak.</p>
+        <p>Kami tidak hanya memberikan janji manis. Kami bekerja erat dengan klien untuk memahami kebutuhan mereka,
+          memastikan setiap fitur dan desain memiliki dampak nyata. Setiap proyek adalah kolaborasi, bukan hanya
+          eksekusi sepihak.</p>
       </div>
-      
+
       <div class="Why2">
         <h2>Cepat, Tepat, dan Tetap Elegan</h2>
-         <div class="garis"></div>
-        <p><strong>HexaSite</strong> menjamin kecepatan pengerjaan tanpa mengorbankan kualitas. Kami menerapkan standar coding yang rapi dan efisien agar website tidak hanya tampil menarik, tapi juga ringan dan fungsional.</p>
+        <div class="garis"></div>
+        <p><strong>HexaSite</strong> menjamin kecepatan pengerjaan tanpa mengorbankan kualitas. Kami menerapkan standar
+          coding yang rapi dan efisien agar website tidak hanya tampil menarik, tapi juga ringan dan fungsional.</p>
       </div>
     </div>
   </div>
-  
-  
-  <script src="script.js"></script>
+
+
+  <!-- JavaScript for burger menu -->
+  <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const overlay = document.querySelector('.overlay');
+    
+    // Toggle navigation
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      burger.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    });
+    
+    // Close menu when clicking on overlay
+    overlay.addEventListener('click', () => {
+      nav.classList.remove('active');
+      burger.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        burger.classList.remove('active');
+        overlay.classList.remove('active');
+                overlay.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+
+    
+  </script>
 </body>
 </html>
